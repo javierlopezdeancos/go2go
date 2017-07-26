@@ -1,67 +1,94 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"../helpers"
+)
 
 func main() {
 
-	header := `
-    *************************************************************
-    *                                                           *
-    *                      Tipos de datos                       *
-    *                          Arrays                           *
-    *                                                           *
-    *************************************************************
-    `
+	headers := helpers.GetHeaders()
 
-	// declarar Arrays
+	title := `*                       Los Arrays                             *`
+
+	fmt.Println(headers.Break)
+	fmt.Println(headers.Title)
+	fmt.Println(headers.TitleSide)
+	fmt.Println(headers.TitleSide)
+	fmt.Println(title)
+	fmt.Println(headers.TitleSide)
+	fmt.Println(headers.TitleSide)
+	fmt.Println(headers.Title)
+
+	fmt.Println(headers.Given)
+	fmt.Println("Declaramos el array var x [3]int")
 	var x [3]int
 
-	fmt.Println(header)
-	fmt.Println("var x [3]int es igual a: ")
-	fmt.Println(x)
-
-	// asignar valor a un Arrays
+	fmt.Println(headers.When)
+	fmt.Println("Asignamos un valor al array x[1] = 25")
 	x[1] = 25
-	fmt.Println("\nhe asignado el valor 25 al indice 1 del array, x[1]=25: ")
-	fmt.Println(x)
 
-	// acceder a un indice concreto
-	fmt.Println("\naccedo directamente al indice 1 del array x[1]: ")
-	fmt.Println(x[1])
+	fmt.Println(headers.Then)
+	fmt.Println("x = ", x)
 
-	// declarar e inicializar Arrays
+	fmt.Println(headers.Then)
+	fmt.Println("Podemos acceder a un valor de un array x[1] =  ", x[1])
+
+	fmt.Println(headers.Break)
+
+	fmt.Println(headers.Given)
+	fmt.Println("Podemos Declarar e inicializar el array y := [2]int{5, 10}")
 	y := [2]int{5, 10}
-	fmt.Println("\nvar y=[2]int{5,10} es igual a: ")
-	fmt.Println(y)
 
-	// declarar e inicializar Arrays 2
+	fmt.Println(headers.Then)
+	fmt.Println("y = ", y)
+
+	fmt.Println(headers.Break)
+
+	fmt.Println(headers.Given)
+	fmt.Println("Podemos Declarar e inicializar también el array z := [...]int{3, 4, 5}")
 	z := [...]int{3, 4, 5}
-	fmt.Println("\nvar z=[...]int{3,4,5} asignación dinámica del tamaño del array en la declaración: ")
-	fmt.Println(z)
 
-	// array de calquier Tipos
+	fmt.Println(headers.Then)
+	fmt.Println("z = ", z)
+
+	fmt.Println(headers.Break)
+
+	fmt.Println(headers.Given)
+	fmt.Println("Podemos tener arrays de cualquier otro tipo f := [...]float64{0.3, 1.8}")
 	f := [...]float64{0.3, 1.8}
-	fmt.Println("\narrays tipo float: ")
-	fmt.Println(f)
 
-	// funcion len() indica el tamaño de un array
-	fmt.Println("\nel tamaño del array f := [...]float64{0.3, 1.8} es: ")
-	fmt.Println(len(f))
+	fmt.Println(headers.Then)
+	fmt.Println("f = ", f)
 
-	// comparar Arrays
-	// el mismo tamaño
-	// el mismo Tipo
-	// el mismo contenido
+
+	fmt.Println(headers.Break)
+
+	fmt.Println(headers.Given)
+	fmt.Println("Podemos calcular la longitud/tamaño de un array con la funcion len()")
+
+	fmt.Println(headers.Then)
+	fmt.Println("len(f) = ", len(f))
+
+	fmt.Println(headers.Break)
+
 	a := [2]int{1, 2}
 	b := [...]int{1, 2}
 	c := [2]int{2, 1}
 
-	fmt.Println("\nsi a := [2]int{1, 2}")
-	fmt.Println("si b := [...]int{1, 2}")
-	fmt.Println("y si c := [3]int{1, 2, 4}")
-	fmt.Println("a = b: ")
-	fmt.Println(a == b)
-	fmt.Println("a = c: ")
-	fmt.Println(a == c)
+	fmt.Println(headers.Given)
+	fmt.Println("Podemos comparar arrays, son iguales si:")
+	fmt.Println("1. El mismo tamaño")
+	fmt.Println("2. El mismo tipo")
+	fmt.Println("3. El mismo contenido")
+
+	fmt.Println(headers.When)
+	fmt.Println("a := [2]int{1, 2}")
+	fmt.Println("b := [...]int{1, 2}")
+	fmt.Println("c := [2]int{2, 1}")
+
+	fmt.Println(headers.Then)
+	fmt.Println("a = b => ", a == b)
+	fmt.Println("a = c => ", a == c)
 
 }
